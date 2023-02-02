@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+}
+.header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fca5a5;
+  padding: 5px;
+}
+.img {
+  width: 70px;
+  height: 70px;
+}
+.searchbar {
+  height: 20px;
+  width: 300px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #e2e8f0;
+}
+.navbar > ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style-type: none;
+}
+.navbar > ul > li {
+  padding: 10px;
+}
+.cardslist {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+.card {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid black;
+  margin: 10px;
+}
+.card > img {
+  width: 100%;
+}
