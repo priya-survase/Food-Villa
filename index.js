@@ -1047,10 +1047,9 @@ const restaurantList = [
   },
 ];
 
-const RestaurantCard = ({ restaurant }) => {
+const RestaurantCard = ({ name, cuisines, cloudinaryImageId, avgRating }) => {
   //console.log(restaurant?.data?.data);
-  const { name, cuisines, cloudinaryImageId, avgRating } =
-    restaurant?.data?.data;
+  //const { name, cuisines, cloudinaryImageId, avgRating } = restaurant;
   return (
     <div className="card">
       <img
@@ -1066,14 +1065,14 @@ const RestaurantCard = ({ restaurant }) => {
 const Body = () => {
   return (
     <div className="cardslist">
-      <RestaurantCard restaurant={restaurantList[0]} />
-      <RestaurantCard restaurant={restaurantList[1]} />
-      <RestaurantCard restaurant={restaurantList[2]} />
-      <RestaurantCard restaurant={restaurantList[3]} />
-      <RestaurantCard restaurant={restaurantList[4]} />
-      <RestaurantCard restaurant={restaurantList[5]} />
-      <RestaurantCard restaurant={restaurantList[6]} />
-      <RestaurantCard restaurant={restaurantList[7]} />
+      {restaurantList.map((restaurant) => {
+        return (
+          <RestaurantCard
+            {...restaurant?.data?.data}
+            key={restaurant?.data?.data?.id}
+          />
+        );
+      })}
     </div>
   );
 };
