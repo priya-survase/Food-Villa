@@ -2,11 +2,11 @@
   margin: 0;
 }
 .header {
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #fca5a5;
+  background-color: black;
   padding: 5px;
 }
 .img {
@@ -16,15 +16,16 @@
 .searchbar {
   height: 20px;
   width: 300px;
-  margin: 5px;
+  margin: 10px;
   border-radius: 5px;
-  background-color: #e2e8f0;
+  background-color: #fca5a5;
 }
 .navbar > ul {
   display: flex;
   align-items: center;
   justify-content: space-between;
   list-style-type: none;
+  color: #fca5a5;
 }
 .navbar > ul > li {
   padding: 10px;

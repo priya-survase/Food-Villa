@@ -1,51 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const IMG_CDN_URL =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
-//Creating Header Component
-const Logo = () => {
-  return (
-    <a href="">
-      <img
-        className="img"
-        alt="logo"
-        src="https://i.pinimg.com/originals/3d/a0/00/3da000e71ddc31ec29da41266b182ade.jpg"
-      />
-    </a>
-  );
-};
-const Navbar = () => {
-  return (
-    <div className="navbar">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  );
-};
-
-const Searchbar = () => {
-  return (
-    <div>
-      <input className="searchbar" type="text" placeholder="Search" />
-      <button>Search</button>
-    </div>
-  );
-};
-
-const HeaderComponent = () => {
-  return (
-    <div className="header">
-      {<Logo />}
-      {<Searchbar />}
-      {<Navbar />}
-    </div>
-  );
-};
-
-const restaurantList = [
+export const restaurantList = [
   {
     cardType: "restaurant",
     layoutAlignmentType: "VERTICAL",
@@ -1046,49 +1002,3 @@ const restaurantList = [
     parentWidget: false,
   },
 ];
-
-const RestaurantCard = ({ name, cuisines, cloudinaryImageId, avgRating }) => {
-  //console.log(restaurant?.data?.data);
-  //const { name, cuisines, cloudinaryImageId, avgRating } = restaurant;
-  return (
-    <div className="card">
-      <img
-        src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${cloudinaryImageId}`}
-      />
-      <h2>{name}</h2>
-      <h3>{cuisines?.join(", ")}</h3>
-      <h4>{`${avgRating} Stars`}</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="cardslist">
-      {restaurantList.map((restaurant) => {
-        return (
-          <RestaurantCard
-            {...restaurant?.data?.data}
-            key={restaurant?.data?.data?.id}
-          />
-        );
-      })}
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <h4>Footer</h4>;
-};
-const AppLayout = () => {
-  return (
-    <>
-      <HeaderComponent />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
