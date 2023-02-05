@@ -1,3 +1,8 @@
+import { useState } from "react";
+const loggedInUser = () => {
+  return false;
+};
+
 const Logo = () => {
   return (
     <a href="">
@@ -24,10 +29,16 @@ const Navbar = () => {
 };
 
 const HeaderComponent = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState("true");
   return (
     <div className="header">
       {<Logo />}
       {<Navbar />}
+      {isLoggedIn == "true" ? (
+        <button onClick={() => setIsLoggedIn("false")}>Logout</button>
+      ) : (
+        <button onClick={() => setIsLoggedIn("true")}>LogIn</button>
+      )}
     </div>
   );
 };
