@@ -30,6 +30,10 @@
 .navbar > ul > li {
   padding: 10px;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
 .cardslist {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
@@ -40,6 +44,20 @@
   border: 1px solid black;
   margin: 10px;
 }
+.card:hover {
+  box-shadow: 3px 3px 3px 3px gray;
+}
 .card > img {
   width: 100%;
+}
+.shimmer-card {
+  width: 250px;
+  height: 250px;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightgrey;
+}
+
+.resDetails {
+  display: flex;
 }
