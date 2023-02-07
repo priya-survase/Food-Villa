@@ -6,7 +6,8 @@ The path specified must be relevant path. i.e. path:"{path}" for "/parentpath/{p
 
 These children can be rendered throught {<Outlet/>} component which is imported from react-router-dom.
 
-`const appRouter = createBrowserRouter([
+```
+const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
@@ -27,7 +28,8 @@ These children can be rendered throught {<Outlet/>} component which is imported 
         ],
       },
     ]
-    }])`
+    }])
+```
 
 **2. What is the order of lifecycle method calls in class based components?**
 
