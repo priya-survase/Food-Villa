@@ -1,8 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 const loggedInUser = () => {
   return false;
+};
+
+const OnlineBar = () => {
+  const isOnline = useOnline();
+  return isOnline ? (
+    <div className="online">
+      <p>You are Online!</p>
+    </div>
+  ) : (
+    <div className="offline">
+      <p>You are Offline! Please check your internet connection.</p>
+    </div>
+  );
 };
 
 const Logo = () => {
@@ -34,6 +48,9 @@ const Navbar = () => {
         <li>
           <Link to={"/cart"}>Cart</Link>
         </li>
+        <li>
+          <Link to={"/instamart"}>InstaMart</Link>
+        </li>
       </ul>
     </div>
   );
@@ -42,17 +59,20 @@ const Navbar = () => {
 const HeaderComponent = () => {
   const [isLoggedIn, setIsLoggedIn] = useState("false");
   return (
-    <div className="header">
-      {<Logo />}
-      {<Navbar />}
-      {isLoggedIn == "true" ? (
-        <button onClick={() => setIsLoggedIn("false")}>Logout</button>
-      ) : (
-        <Link to={"/login"}>
-          <button onClick={() => setIsLoggedIn("true")}>LogIn</button>
-        </Link>
-      )}
-    </div>
+    <>
+      <OnlineBar />
+      <div className="header">
+        {<Logo />}
+        {<Navbar />}
+        {isLoggedIn == "true" ? (
+          <button onClick={() => setIsLoggedIn("false")}>Logout</button>
+        ) : (
+          <Link to={"/login"}>
+            <button onClick={() => setIsLoggedIn("true")}>LogIn</button>
+          </Link>
+        )}
+      </div>
+    </>
   );
 };
 

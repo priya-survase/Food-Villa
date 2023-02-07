@@ -1,20 +1,16 @@
 import { useEffect, useState } from "react";
 import { restaurantList } from "../config";
+import useAllRestaurants from "../utils/useAllRestaurants.js";
+import useOnline from "../utils/useOnline";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
-function filterData(searchText, restaurantList) {
-  return restaurantList.filter((restaurant) =>
-    restaurant?.data?.name.toLowerCase().includes(searchText.toLowerCase())
-  );
-}
+import { filterData } from "../utils/helper.js";
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
-  console.log(useState());
 
   console.log("initialrender");
 

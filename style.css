@@ -9,6 +9,15 @@
   background-color: black;
   padding: 5px;
 }
+.online {
+  background-color: green;
+  text-align: center;
+}
+.offline {
+  background-color: red;
+  text-align: center;
+  color: white;
+}
 .img {
   width: 70px;
   height: 70px;
