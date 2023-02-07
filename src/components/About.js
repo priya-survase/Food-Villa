@@ -21,6 +21,14 @@ class About extends React.Component {
 
   componentDidMount() {
     //console.log("Parent-ComponentDidMount");
+    this.timer = setInterval(function () {
+      console.log("Hello");
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    console.log("Componentwillunount");
+    clearInterval(this.timer);
   }
 
   render() {

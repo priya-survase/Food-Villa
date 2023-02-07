@@ -27,8 +27,9 @@
   list-style-type: none;
   color: #fca5a5;
 }
-.navbar > ul > li {
+.navbar > ul > li > a {
   padding: 10px;
+  color: #fca5a5;
 }
 a {
   text-decoration: none;
