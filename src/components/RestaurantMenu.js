@@ -13,10 +13,10 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <Shimmer />
   ) : (
-    <div className="resDetails">
-      <div className="resInfo">
+    <div className="flex p-3">
+      <div className="m-3">
         <h2>Restaurant id: {resId} </h2>
-        <h1>{restaurant.name}</h1>
+        <h1 className="font-bold text-2xl">{restaurant.name}</h1>
         <img src={IMG_CDN_URL + restaurant.cloudinaryImageId} />
         <h2>
           {restaurant.area},{restaurant.city}
@@ -26,8 +26,8 @@ const RestaurantMenu = () => {
       </div>
 
       {console.log(Object.values(restaurant?.menu?.items))}
-      <div className="resMenu">
-        <h1>Menu</h1>
+      <div className="m-3">
+        <h1 className="text-2xl font-bold">Menu</h1>
         <ul>
           {Object.values(restaurant?.menu?.items).map((item) => (
             <li key={item.id}>{item.name}</li>

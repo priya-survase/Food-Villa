@@ -37,9 +37,9 @@ const Body = () => {
   else {
     return (
       <>
-        <div>
+        <div className="mt-1">
           <input
-            className="searchbar"
+            className="m-1 bg-pink-300 p-2 rounded-md focus-within:purple"
             type="text"
             placeholder="Search"
             value={searchText}
@@ -48,6 +48,7 @@ const Body = () => {
             }}
           />
           <button
+            className="bg-purple-500 p-1 rounded-sm"
             onClick={() => {
               const data = filterData(searchText, allRestaurants);
               setfilteredRestaurants(data);
@@ -56,7 +57,7 @@ const Body = () => {
             Search
           </button>
         </div>
-        <div className="cardslist">
+        <div className="flex w-full flex-wrap">
           {filteredRestaurants.map((restaurant) => {
             return (
               <Link to={"/restaurant/" + restaurant?.data?.id}>
