@@ -61,7 +61,7 @@ const HeaderComponent = () => {
   return (
     <>
       <OnlineBar />
-      <div className="flex justify-between items-center p-2 bg-pink-300 font-semibold">
+      <div className="flex justify-between items-center p-2 bg-slate-600 font-c font-semibold text-white">
         {<Logo />}
         {<Navbar />}
         {isLoggedIn == "true" ? (

@@ -37,9 +37,9 @@ const Body = () => {
   else {
     return (
       <>
-        <div className="mt-1">
+        <div className="mt-1 flex justify-center">
           <input
-            className="m-1 bg-pink-300 p-2 rounded-md focus-within:purple"
+            className="m-1 bg-slate-100 p-2 rounded-md focus-within:purple border-slate-500 border"
             type="text"
             placeholder="Search"
             value={searchText}
@@ -48,7 +48,7 @@ const Body = () => {
             }}
           />
           <button
-            className="bg-purple-500 p-1 rounded-sm"
+            className="bg-slate-500 text-white rounded-md m-1 w-20"
             onClick={() => {
               const data = filterData(searchText, allRestaurants);
               setfilteredRestaurants(data);
