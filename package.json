@@ -16,6 +16,7 @@
   },
   "scripts": {
     "start": "parcel index.html",
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build"
   }
 }
