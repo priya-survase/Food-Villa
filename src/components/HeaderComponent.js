@@ -1,6 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import { useSelector } from "react-redux";
+import { CiDiscount1 } from "react-icons/Ci";
+import { FiUser, FiShoppingCart } from "react-icons/Fi";
+import { IconContext } from "react-icons";
 
 const loggedInUser = () => {
   return false;
@@ -21,36 +25,73 @@ const OnlineBar = () => {
 
 const Logo = () => {
   return (
-    <a href="">
+    <Link to={"/"}>
       <img
         className="w-16 h-16"
         alt="logo"
         src="https://i.pinimg.com/originals/3d/a0/00/3da000e71ddc31ec29da41266b182ade.jpg"
       />
-    </a>
+    </Link>
   );
 };
 
 const Navbar = () => {
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
+
   return (
     <div>
       <ul className="flex justify-between">
-        <li className="px-2">
+        {/* <li className="px-2">
           <Link to={"/"}>Home</Link>
+        </li> */}
+
+        <li className="px-2 ml-4">
+          <link
+            type="image/png"
+            sizes="16x16"
+            rel="icon"
+            href=".../icons8-discount-16.png"
+          />
+          {/* <Link to={"/about"}> */}
+          <div className="flex">
+            <IconContext.Provider value={{ size: "1.5em" }}>
+              <div className="mr-2">
+                <CiDiscount1 />
+              </div>
+            </IconContext.Provider>
+            Offers
+          </div>
+          {/* </Link> */}
         </li>
 
-        <li className="px-2">
-          <Link to={"/about"}>About</Link>
+        <li className="px-2 ml-4">
+          <Link to={"/cart"}>
+            <div className="flex">
+              <IconContext.Provider value={{ size: "1.5em" }}>
+                <div className="mr-2">
+                  <FiShoppingCart />
+                </div>
+              </IconContext.Provider>
+              Cart -{cartItems.length}
+            </div>
+          </Link>
         </li>
-        <li className="px-2">
-          <Link to={"/contact"}>Contact</Link>
+        <li className="px-2 ml-4">
+          {/* <Link to={"/contact"}> */}
+          <div className="flex">
+            <IconContext.Provider value={{ size: "1.5em" }}>
+              <div className="mr-2">
+                <FiUser />
+              </div>
+            </IconContext.Provider>
+            Priya
+          </div>
+          {/* </Link> */}
         </li>
-        <li className="px-2">
-          <Link to={"/cart"}>Cart</Link>
-        </li>
-        <li className="px-2">
+        {/* <li className="px-2">
           <Link to={"/instamart"}>InstaMart</Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
@@ -61,10 +102,10 @@ const HeaderComponent = () => {
   return (
     <>
       <OnlineBar />
-      <div className="flex justify-between items-center p-2 bg-slate-600 font-c font-semibold text-white">
+      <div className="flex justify-between items-center p-2 font-c font-semibold shadow-lg border">
         {<Logo />}
         {<Navbar />}
-        {isLoggedIn == "true" ? (
+        {/* {isLoggedIn == "true" ? (
           <button
             className="bg-purple-500 p-2 rounded-md"
             onClick={() => setIsLoggedIn("false")}
@@ -80,7 +121,7 @@ const HeaderComponent = () => {
               LogIn
             </button>
           </Link>
-        )}
+        )} */}
       </div>
     </>
   );

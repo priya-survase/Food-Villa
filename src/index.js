@@ -12,6 +12,8 @@ import Login from "./components/Login";
 import Profile from "./components/Profile";
 import ProfileClass from "./components/ProfileClass";
 import Shimmer from "./components/Shimmer";
+import { Provider } from "react-redux";
+import store from "./utils/store";
 
 const InstaMart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
@@ -19,9 +21,11 @@ const About = lazy(() => import("./components/About"));
 const AppLayout = () => {
   return (
     <>
-      <HeaderComponent />
-      <Outlet />
-      <Footer />
+      <Provider store={store}>
+        <HeaderComponent />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };
