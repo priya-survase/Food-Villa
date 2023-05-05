@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import { useSelector } from "react-redux";
-import { CiDiscount1 } from "react-icons/Ci";
-import { FiUser, FiShoppingCart } from "react-icons/Fi";
+import { CiDiscount1 } from "react-icons/ci";
+import { FiUser, FiShoppingCart } from "react-icons/fi";
 import { IconContext } from "react-icons";
 
 const loggedInUser = () => {
