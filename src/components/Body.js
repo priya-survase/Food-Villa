@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { restaurantList } from "../config";
 import useAllRestaurants from "../utils/useAllRestaurants.js";
 import useOnline from "../utils/useOnline";
-import RestaurantCard from "./restaurantCard";
+import RestaurantCard from "./RestaurantCard";
 import Carousel from "./Carousel";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
