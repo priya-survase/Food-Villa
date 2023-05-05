@@ -1,6 +1,6 @@
 import { useState } from "react";
 import ItemCard from "./ItemCard";
-import { BsCaretDown, BsCaretUp } from "react-icons/Bs";
+import { BsCaretDown, BsCaretUp } from "react-icons/bs";
 import { IconContext } from "react-icons";
 
 const Menu = ({ Menu }) => {
