@@ -29,7 +29,7 @@ const Cart = () => {
       <div className="flex-col">
         <div className="flex justify-between">
           <p>Total</p>
-          <p>{totalPrice}</p>
+          <p>{totalPrice}.00</p>
         </div>
         <div className="flex justify-between">
           <p>Delivery Charges</p>
@@ -37,7 +37,7 @@ const Cart = () => {
         </div>
         <div className="flex justify-between">
           <p>Total Charges</p>
-          <p>{totalPrice + 40.0}</p>
+          <p>{totalPrice + 40.0}.00</p>
         </div>
       </div>
       {cart.map((item) => (
