@@ -43,6 +43,12 @@ const Cart = () => {
       {cart.map((item) => (
         <CartItem foodItem={item} />
       ))}
+      <button
+        className="bg-green-300 p-1 mt-2 mb-2 font-bold border border-black-100 text-lg rounded-lg"
+        onClick={() => clearCart1()}
+      >
+        Place Order
+      </button>
     </div>
   ) : (
     <div className="max-w-screen-md h-full mt-0 mx-auto my-auto mb-14 p-4 flex justify-center content-center">
