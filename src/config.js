@@ -6,7 +6,7 @@ export const CAROUSEL_IMG_URL =
 
 export const FETCH_MENU_URL =
   //"https://www.swiggy.com/dapi/menu/v4/full?lat=18.591945&lng=73.73897649999999&menuId=";
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.591945&lng=73.73897649999999&restaurantId=";
+  "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.591945&lng=73.73897649999999&restaurantId=";
 
 export const FOODITEM_IMG_URL =
   "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";

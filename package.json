@@ -18,5 +18,6 @@
     "start": "parcel index.html",
     "test": "jest",
     "build": "parcel build"
-  }
+  },
+  "proxy": "https://www.swiggy.com"
 }

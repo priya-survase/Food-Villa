@@ -23,8 +23,9 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
+      "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
     );
+
     const json = await data.json();
     console.log(json?.data?.cards[2]?.data?.data?.cards);
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -66,7 +67,10 @@ const Body = () => {
             </button>
           </div>
         </div>
-
+        <iframe
+          className="hidden"
+          src="https://cors-anywhere.herokuapp.com/corsdemo"
+        ></iframe>
         <div className="flex w-full flex-wrap">
           {filteredRestaurants.map((restaurant) => {
             return (
