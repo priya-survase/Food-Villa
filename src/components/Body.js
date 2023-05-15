@@ -23,7 +23,7 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      "https://cors-anywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -67,10 +67,10 @@ const Body = () => {
             </button>
           </div>
         </div>
-        <iframe
+        {/* <iframe
           className="hidden"
           src="https://cors-anywhere.herokuapp.com/corsdemo"
-        ></iframe>
+        ></iframe> */}
         <div className="flex w-full flex-wrap">
           {filteredRestaurants.map((restaurant) => {
             return (
