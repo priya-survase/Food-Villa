@@ -48,6 +48,7 @@ const Body = () => {
           </div>
           <div className="mt-1 flex justify-center mr-2">
             <input
+              data-testId="search-input"
               className="m-1 bg-slate-100 p-2 rounded-md focus-within:purple border-slate-500 border"
               type="text"
               placeholder="Search"
@@ -57,6 +58,7 @@ const Body = () => {
               }}
             />
             <button
+              data-testId="search-btn"
               className="bg-slate-500 text-white rounded-md m-1 w-20"
               onClick={() => {
                 const data = filterData(searchText, allRestaurants);
@@ -71,7 +73,7 @@ const Body = () => {
           className="hidden"
           src="https://cors-anywhere.herokuapp.com/corsdemo"
         ></iframe> */}
-        <div className="flex w-full flex-wrap">
+        <div data-testId="res-list" className="flex w-full flex-wrap">
           {filteredRestaurants.map((restaurant) => {
             return (
               <Link to={"/restaurant/" + restaurant?.data?.id}>

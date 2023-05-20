@@ -19,7 +19,10 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <MenuShimmer />
   ) : (
-    <div className="max-w-screen-md min-h-[90%] mt-0 mx-auto my-auto mb-0">
+    <div
+      data-testId="Menu"
+      className="max-w-screen-md min-h-[90%] mt-0 mx-auto my-auto mb-0"
+    >
       <div className="">
         <p className="text-xs mt-2">
           Home / {basicInfo.city} / {basicInfo.areaName} / {basicInfo.name}{" "}

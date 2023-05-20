@@ -13,11 +13,11 @@ const loggedInUser = () => {
 const OnlineBar = () => {
   const isOnline = useOnline();
   return isOnline ? (
-    <div className="px-1 bg-green-400">
+    <div data-testid="onlineStatus" className="px-1 bg-green-400">
       <p>You are Online!</p>
     </div>
   ) : (
-    <div className="px-1 bg-red-500">
+    <div data-testid="onlineStatus" className="px-1 bg-red-500">
       <p>You are Offline! Please check your internet connection.</p>
     </div>
   );
@@ -73,7 +73,7 @@ const Navbar = () => {
                   <FiShoppingCart />
                 </div>
               </IconContext.Provider>
-              Cart -{cartItems.length}
+              <p data-testid="cart">Cart -{cartItems.length}</p>
             </div>
           </Link>
         </li>
