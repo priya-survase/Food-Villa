@@ -1,12 +1,15 @@
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/cartSlice";
 import { FOODITEM_IMG_URL } from "../config";
+import { useState } from "react";
 const itemCard = ({ foodItem }) => {
   //console.log(fooditem);
   const dispatch = useDispatch();
+  const [addbtn, setAddBtn] = useState(false);
   const handleAddItem = (foodItem) => {
     //console.log(foodItem);
     dispatch(addItem(foodItem));
+    setAddBtn(true);
   };
   return (
     <>
@@ -27,11 +30,12 @@ const itemCard = ({ foodItem }) => {
             <img src={FOODITEM_IMG_URL + foodItem?.card?.info?.imageId} />
           )}
 
-          <button data-testId="addbtn"
+          <button
+            data-testId="addbtn"
             onClick={() => handleAddItem(foodItem)}
             className="w-20 h-8 border border-slate-400 rounded text-green-600 mt-1"
           >
-            Add
+            {!addbtn ? "Add" : "Added"}
           </button>
         </div>
       </div>
