@@ -13,6 +13,7 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setfilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const [searchResult, setSearchResult] = useState(true);
 
   console.log("initialrender");
 
@@ -62,7 +63,10 @@ const Body = () => {
               className="bg-slate-500 text-white rounded-md m-1 w-20"
               onClick={() => {
                 const data = filterData(searchText, allRestaurants);
-                setfilteredRestaurants(data);
+                if (data.length) {
+                  setfilteredRestaurants(data);
+                  setSearchResult(true);
+                } else setSearchResult(false);
               }}
             >
               Search
@@ -74,16 +78,25 @@ const Body = () => {
           src="https://cors-anywhere.herokuapp.com/corsdemo"
         ></iframe> */}
         <div data-testId="res-list" className="flex w-full flex-wrap">
-          {filteredRestaurants.map((restaurant) => {
-            return (
-              <Link to={"/restaurant/" + restaurant?.data?.id}>
-                <RestaurantCard
-                  {...restaurant?.data}
-                  key={restaurant?.data?.id}
-                />
-              </Link>
-            );
-          })}
+          {searchResult ? (
+            filteredRestaurants.map((restaurant) => {
+              return (
+                <Link to={"/restaurant/" + restaurant?.data?.id}>
+                  <RestaurantCard
+                    {...restaurant?.data}
+                    key={restaurant?.data?.id}
+                  />
+                </Link>
+              );
+            })
+          ) : (
+            <div className="w-full flex justify-center">
+              <img
+                className="w-[50%]"
+                src="https://www.replaylistings.com/assets/images/result-not-found-1.png"
+              />
+            </div>
+          )}
         </div>
       </>
     );
