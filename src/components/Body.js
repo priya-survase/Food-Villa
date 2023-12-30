@@ -24,13 +24,25 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
     );
 
+    // const data = await fetch(
+    //   "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5912716&lng=73.73890899999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    // );
+    //console.log(data);
+
     const json = await data.json();
-    console.log(json?.data?.cards[2]?.data?.data?.cards);
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setfilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    console.log(json);
+    console.log(
+      json?.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    );
+    setAllRestaurants(
+      json?.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    );
+    setfilteredRestaurants(
+      json?.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+    );
   }
 
   if (!allRestaurants) return null;
@@ -81,10 +93,10 @@ const Body = () => {
           {searchResult ? (
             filteredRestaurants.map((restaurant) => {
               return (
-                <Link to={"/restaurant/" + restaurant?.data?.id}>
+                <Link to={"/restaurant/" + restaurant?.info?.id}>
                   <RestaurantCard
-                    {...restaurant?.data}
-                    key={restaurant?.data?.id}
+                    {...restaurant?.info}
+                    key={restaurant?.info?.id}
                   />
                 </Link>
               );
