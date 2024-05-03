@@ -1,2 +1,2 @@
 /*
-  Access-Control-Allow-Origin: https://www.swiggy.com
+  Access-Control-Allow-Origin: *
