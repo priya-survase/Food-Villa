@@ -11,10 +11,10 @@ const RestaurantMenu = () => {
   //console.log(resId);
 
   const restaurant = useRestaurantMenu(resId);
-  //console.log(restaurant);
-  const itemCards = restaurant?.cards[2].groupedCard.cardGroupMap.REGULAR.cards;
+  console.log(restaurant);
+  const itemCards = restaurant?.cards[4].groupedCard.cardGroupMap.REGULAR.cards;
   console.log(itemCards);
-  const basicInfo = restaurant?.cards[0]?.card?.card?.info;
+  const basicInfo = restaurant?.cards[2]?.card?.card?.info;
 
   return !restaurant ? (
     <MenuShimmer />
